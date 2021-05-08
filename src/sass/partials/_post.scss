@@ -1,0 +1,142 @@
+
+.posts{
+  margin: 20px 0;
+}
+
+.post{
+  margin-top: 15px;
+  box-shadow: 0 2px 12px 0 hsla(0,0%,68%,.32);
+  position: relative;
+  border-radius: 10px;
+  display: none;
+
+  &__active{
+    display: block;
+  }
+
+  &__entry-image{
+    margin: 0;
+    position: relative;
+  }
+
+  &__image{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-style: none;
+  }
+
+  &__time-updated{
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    font-size: 0.875rem;
+    color: #fff;
+    padding: 2px 4px;
+  }
+
+  &__entry-content{
+    min-height: 500px;
+    padding: 25px;
+
+    &__title{
+      display: block;
+    }
+
+    &__link{
+      text-decoration: none;
+      color: $color-element;
+      font-weight: 300;
+    }
+
+    &__categories{
+      list-style: none;
+      padding: 0;
+      margin: 0 0 10px;
+      display: inline-block;
+      width: 100%;
+      color: $color-element;
+    }
+  }
+
+  &__post-title{
+    font-size: 1.75rem;
+    line-height: 1.29;
+    margin-bottom: 12px;
+    color: $color-title;
+  }
+
+  &__entry-summer{
+    &__text{
+      font-size: 1rem;
+      line-height: 1.57;
+      margin-bottom: 15px;
+      color: $color-title;
+      font-family: 'Montserrat', sans-serif;
+    }
+  }
+
+  &__entry-meta{
+    display: flex;
+  }
+
+  &__author-avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 8px;
+
+    &__image{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__author-info{
+    height: 40px;
+    font-size: 0.875rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  &__post-tags{
+    margin: 10px 0;
+
+    &__list{
+      justify-content: flex-start;
+      flex-wrap: wrap;
+
+      &__item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        border: 1px solid $color-apricot;
+        background: $color-apricot;
+        padding: 0 5px;
+        border-radius: 3px;
+        min-width: 110px;
+        height: 30px;
+        margin: 0 5px 5px 0;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.post__entry-content__link:hover{
+  color: $color-apricot;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.post__post-tags__list :hover{
+  background-color: $color-title;
+  border: 1px solid $color-title;
+}
+

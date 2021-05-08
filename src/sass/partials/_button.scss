@@ -1,0 +1,23 @@
+
+.btn{
+  width: 120px;
+  height: 30px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid $color-apricot;
+  background: none;
+}
+
+.btn__tag{
+  width: 100%;
+}
+
+.btn__link{
+  font-size: 15px;
+  margin: 15px;
+}
+
+.btn:hover{
+  border: 1px solid $color-element;
+  color: $color-element;
+}

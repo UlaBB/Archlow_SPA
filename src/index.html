@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext"
+    rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>ARCHLOW_SPA</title>
+</head>
+
+<body>
+  <!--Header for all -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav flex">
+        <div class="nav__logo">
+          <a href="./archlow.html" class="nav__brand">archlow</a>
+        </div>
+        <ul class="nav__menu flex">
+          <li class="nav__item">
+            <a href="./warunki_techniczne.html" class="nav__link">Przepisy budowlane</a>
+          </li>
+          <li class="nav__item">
+            <a href="./index.html" class="nav__link">Blog</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">O mnie</a>
+          </li>
+          <li class="nav__item">
+            <a href="./contact.html" class="btn nav__link">Kontakt</a>
+          </li>
+        </ul>
+        <div class="nav__toggler">
+          <div class="nav__bar"></div>
+          <div class="nav__bar"></div>
+          <div class="nav__bar"></div>
+          <div class="nav__bar"></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="category">
+    <div class="container">
+      <div class="category__container flex">
+        <div class="category__select">
+          <label class="category__label" for="select">Kategoria :</label>
+          <select id="select" class="category__item">
+            <!-- <option value="">Name of category</option> -->
+          </select>
+        </div>
+        <div class="category__searchform">
+          <form id="category__form">
+            <div class="flex">
+              <div class="category__input">
+                <input id="s" class="category__field" type="text" onfocus="this.value=''" name="s" required=""
+                  placeholder="Wpisz słowo kluczowe"></input>
+              </div>
+              <button class="category__searchbutton">
+                <svg class="svg-inline--fa fa-search fa-w-16" aria-hidden="true" data-fa-processed="" data-prefix="fas"
+                  data-icon="search" role="img" viewBox="0 0 512 512">
+                  <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 
+                                    208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 
+                                    6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 
+                                    9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 
+                                    70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
+                  </path>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="posts">
+    <div class="container flex-wrap"></div>
+  </section>
+
+  <script id="template-article-link" type="text/x-handlebars-template">
+
+        <article class="post post__active" id="{{id}}" data-category="{{categoryTitle}}" 
+            data-author="{{author}}">
+            <div class="container__inner">
+                <div class="post__entry-image">
+                    <a href={{link}}><img class="post__image"
+                            src={{img}}
+                            alt="img_post"></a>
+                    <time class="post__time-updated" datetime="2020-11-01T08:12:10+00:00">{{data}}</time>
+                </div>
+
+                <div class="post__entry-content">
+                    <header class="post__entry-content__title">
+                        <ul class="post__entry-content__categories">
+                            <li><a class="post__entry-content__link" href="">{{categoryTitle}}</a></li>
+                        </ul>
+                        <a href={{link}}>
+                            <h1 class="post__post-title">{{title}}</h1>
+                        </a>
+                    </header>
+                    <div class="post__entry-summer post-content">
+                        <a href={{link}}>
+                            <p class="post__entry-summer__text">{{description}}</p>
+                        </a>
+                    </div>
+                    <footer>
+                        <div class="post__entry-meta">
+                            <div class="post__author-avatar">
+                                <img src={{authorAvatar}}
+                                    class="post__author-avatar__image" alt="author-avatar">
+                            </div>
+                            <div class="post__author-info post-author">
+                                <p class="post__author-info__text">{{author}}</p>
+                            </div>
+                        </div>
+                    </footer>
+                    <div class="post__post-tags tags">
+                        <ul class="post__post-tags__list flex list-horizontal">
+                             {{#each tags}}
+                            <li class="post__post-tags__list__item"><a href="#{{this}}">{{this}}</a></li>
+                            {{~/each~}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </script>
+
+
+  <section class="tagsCloud">
+    <div class="container">
+      <div class="tagsCloud__tags flex-wrap">
+        <h2>Tag cloud</h2>
+        <ul class="tagsCloud__tags_List flex-wrap">
+          <!-- <li>
+                        <btn class="btn"><a href="#">design</a> <span>(6)</span></btn>
+                    </li> -->
+      </div>
+    </div>
+  </section>
+
+  <footer class="contact">
+    <div class="contact__content-info">
+      <div class="container">
+        <div class="contact__content-about-us">
+          <h2>O nas</h2>
+          <p>Etiam egestas faucibus urna et finibus. Cras vel tellus vel magna suscipit
+            euismod. Maecenas id arcu ante. Duis iaculis scelerisque erat, at ullamcorper arcu
+            consectetur eu. Fusce aliquam diam at arcu pharetra, vel fermentum nunc lobortis.</p>
+        </div>
+        <div class="contact__contact-info ">
+          <a class="contact__mail" href="#">archlow@archlow.com</a>
+          <a class="contact__phone">+48 23293092439</a>
+          <button class="btn btn__link"><a class="contact__link" href="/contact.html">Get in touch</a></button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+
+  <script src="./js/data.js"></script>
+  <script src="./js/utils.js"></script>
+  <script src="./js/script_handlbars.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

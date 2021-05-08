@@ -1,0 +1,61 @@
+
+.tagsCloud{
+  margin: 15px 0;
+
+  &__tags{
+    &__List{
+      margin: 20px 0 0 0;
+    }
+  }
+}
+
+.post-tags{
+  margin: 10px 0;
+
+  &__list{
+    flex-wrap: wrap;
+    margin: 20px 0 20px 0;
+
+    &__item{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      padding: 0 5px;
+      border-radius: 3px;
+      min-width: 110px;
+      height: 30px;
+      margin: 0 10px 10px 0;
+      text-align: center;
+
+      a{
+        color: $color-apricot;
+      }
+    }
+  }
+}
+
+.post-tags__list__item :hover{
+  color: $color-element;
+}
+
+.tag-size-1{
+  font-size: 11px;
+}
+
+.tag-size-2{
+  font-size: 12px;
+}
+
+.tag-size-3{
+  font-size: 14px;
+}
+
+.tag-size-4{
+  font-size: 16px;
+}
+
+.tag-size-5{
+  font-size: 17px;
+  font-weight: bold;
+}

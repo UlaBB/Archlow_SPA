@@ -1,0 +1,43 @@
+.contact{
+  margin: 20px 0;
+  padding: 20px 0;
+  background: $color-title;
+  text-align: center;
+  color: $color-apricot;
+
+  &__content-about-us{
+    text-align: center;
+    color: $base__background-color;
+    
+    h2{
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    p{
+      font-weight: 300;
+      font-size: 1rem;
+      line-height: 1.57;
+    }
+  }
+
+  &__contact-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    text-align: center;
+    color: $base__background-color;
+  }
+    
+  &__phone, &__mail{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+    color: $color-apricot;
+  }
+
+  &__link{
+    color: $color-apricot;
+  }
+}

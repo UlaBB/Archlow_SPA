@@ -1,0 +1,103 @@
+
+.header{
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+.nav{
+  &__logo{
+    font-size: 35px;
+  }
+
+  &__brand{
+    font-weight: bold;
+    font-family: $font-text;
+    color: $color-apricot;
+    letter-spacing: 3px;
+  }
+
+  &__menu{
+    list-style: none;
+
+    .nav__item:last-child {
+      color: $color-apricot;
+    }
+  }
+
+  &__item{
+    display: inline-block;
+    line-height: 28px;
+    margin-left: 25px;
+
+    :hover{
+      color: $color-apricot;
+    }
+  }
+
+  &__link{
+    color: $color-element;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &__toggler{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+  }
+
+  &__bar{
+    background-color: $color-element;
+    height: 2px;
+    border-radius: 0.5px;
+    margin: 1px 0;
+  }  
+}
+
+@media screen and (max-width: 768px){
+  body{
+    overflow-y: hidden;
+  }
+
+  .nav{
+    &__menu{
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 100px;
+      padding: 10px 0;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      background-color: $color-apricot;
+      transform: translateY(-150%);
+      transition: transform 0.5s ease-in;
+    }
+
+    &__item{
+      margin: 10px 0;
+
+      :hover{
+        color: $color-element;
+      }
+    }
+
+    &__link{
+      color: $base__background-color;
+    }
+
+    &__active{
+      transform: translateY(0%);
+    }
+  }
+}
+
+@media screen and (min-width: 768px){
+  .nav__toggler{
+    display: none;
+  }
+}
