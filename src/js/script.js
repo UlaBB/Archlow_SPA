@@ -2,7 +2,7 @@
 
 const opt = {
   articles: '.post',
-}
+};
 
 
 
@@ -38,7 +38,7 @@ function filterCategories() {
           properArticle.classList.add('post__active');
         }
       }
-    })
+    });
   }
 }
 
@@ -51,29 +51,29 @@ function generateAuthor() {
   }
 }
 
-function generateTagsInArticle() {
-  const articles = document.querySelectorAll(opt.articles);
+// function generateTagsInArticle() {
+//   const articles = document.querySelectorAll(opt.articles);
 
-  for (let article of articles) {
-    const tagsArticleList = article.querySelector('.post__post-tags__list');
-    tagsArticleList.innerHTML = '';
-    let html = '';
-    const tagsArticle = article.getAttribute('data-tags');
-    const singleTagsArticle = tagsArticle.split(' ');
-    for (let singleTag of singleTagsArticle) {
-      const linkHtml = '<li class="post__post-tags__list__item"><a href="#' + singleTag + '">' + singleTag + '</a></li>';
-      html += linkHtml;
-    }
-    tagsArticleList.innerHTML = html;
-  }
-}
+//   for (let article of articles) {
+//     const tagsArticleList = article.querySelector('.post__post-tags__list');
+//     tagsArticleList.innerHTML = '';
+//     let html = '';
+//     const tagsArticle = article.getAttribute('data-tags');
+//     const singleTagsArticle = tagsArticle.split(' ');
+//     for (let singleTag of singleTagsArticle) {
+//       const linkHtml = '<li class="post__post-tags__list__item"><a href="#' + singleTag + '">' + singleTag + '</a></li>';
+//       html += linkHtml;
+//     }
+//     tagsArticleList.innerHTML = html;
+//   }
+// }
 
 function calculateTagsParams(allTags) {
 
   const params = {
     min: 9999,
     max: 0,
-  }
+  };
   for (let tag in allTags) {
     if ((allTags[tag]) < params.min) {
       params.min = allTags[tag];
@@ -94,7 +94,7 @@ function calculateTagClass(count, params) {
   const optCloudTag = 5;
   const normalizedCount = count - params.min;//7
   const normalizedMax = params.max - params.min;//8
-  const properCount = normalizedCount / normalizedMax; 3.876
+  const properCount = normalizedCount / normalizedMax; //3.876
   const classNumber = Math.floor(properCount * (optCloudTag - 1) + 1);//4
   return classNumber;
 }
@@ -113,7 +113,7 @@ function generateAllTagsList() {
     for (let tagArticle of tagsArticle) {
       const nameTag = tagArticle.innerHTML;
       if (!allTags.hasOwnProperty(nameTag)) {
-        allTags[nameTag] = 1
+        allTags[nameTag] = 1;
       }
       else {
         allTags[nameTag]++;
@@ -134,27 +134,27 @@ function generateAllTagsList() {
 
 }
 
-function filterArticles(customSelector = "") {
-  const articles = document.querySelectorAll(opt.articles);
-  for (let article of articles) {
-    article.classList.remove('post__active');
-  }
-  const properArticles = document.querySelectorAll(opt.articles + customSelector);
-  for (let properArticle of properArticles) {
-    properArticle.classList.add('post__active');
-  }
-}
+// function filterArticles(customSelector = '') {
+//   const articles = document.querySelectorAll(opt.articles);
+//   for (let article of articles) {
+//     article.classList.remove('post__active');
+//   }
+//   const properArticles = document.querySelectorAll(opt.articles + customSelector);
+//   for (let properArticle of properArticles) {
+//     properArticle.classList.add('post__active');
+//   }
+// }
 
-function filterArticleByTag() {
-  const tags = document.querySelectorAll('.post__post-tags__list__item a, .tagsCloud__tags_List a');
-  for (let tag of tags) {
-    tag.addEventListener('click', function (e) {
-      e.preventDefault();
-      const nameTag = tag.innerHTML;
-      filterArticles('[data-tags~="' + nameTag + '"]');
-    })
-  }
-}
+// function filterArticleByTag() {
+//   const tags = document.querySelectorAll('.post__post-tags__list__item a, .tagsCloud__tags_List a');
+//   for (let tag of tags) {
+//     tag.addEventListener('click', function (e) {
+//       e.preventDefault();
+//       const nameTag = tag.innerHTML;
+//       filterArticles('[data-tags~="' + nameTag + '"]');
+//     })
+//   }
+// }
 
 
 
@@ -164,7 +164,7 @@ function activeLupe() {
     e.preventDefault();
     const input = document.querySelector('#s');
     input.classList.toggle('category__input__active');
-  })
+  });
 }
 
 
@@ -187,7 +187,7 @@ function searchWord() {
     for (let item of result) {
       item.classList.add('post__active');
     }
-  })
+  });
 }
 
 
@@ -198,41 +198,40 @@ const openToggler = () => {
   toggler.addEventListener('click', () => {
     navMenu.classList.toggle('nav__active');
   });
-}
+};
 
 //========================================
 // przyklad z eduWeb na dziedziczenie prototypowe
 //===============================================
 
-function Shape(sideLenghts) {
-  this.__name = "";
-  this.__sideLenghts = sideLenghts;
-}
-Shape.prototype.getPerimeter = function () {
-  return this.__sideLenghts.reduce(function (prevVal, val) {
-    return prevVal + val;
-  });
-}
-Shape.prototype.getArea = function () {
-  return this.__sideLenghts[0] * this.__sideLenghts[1];
-}
+// function Shape(sideLenghts) {
+//   this.__name = '';
+//   this.__sideLenghts = sideLenghts;
+// }
+// Shape.prototype.getPerimeter = function () {
+//   return this.__sideLenghts.reduce(function (prevVal, val) {
+//     return prevVal + val;
+//   });
+// };
+// Shape.prototype.getArea = function () {
+//   return this.__sideLenghts[0] * this.__sideLenghts[1];
+// };
 
 
 
-function Reactangle(sideLenghts) {
-  Shape.call(this, [sideLenghts[0], sideLenghts[1], sideLenghts[0], sideLenghts[1]]);
-  this.__name = "Prostokat";
-}
+// function Reactangle(sideLenghts) {
+//   Shape.call(this, [sideLenghts[0], sideLenghts[1], sideLenghts[0], sideLenghts[1]]);
+//   this.__name = 'Prostokat';
+// }
 
-function Square(sideLenght) {
-  Reactangle.call(this, [sideLenght, sideLenght]);
+// function Square(sideLenght) {
+//   Reactangle.call(this, [sideLenght, sideLenght]);
 
-  this.__name = "Kwadrat";
+//   this.__name = 'Kwadrat';
 
-}
+// }
 
-const shape1 = new Square([20]);
-//=======================================
+
 
 openToggler();
 activeLupe();

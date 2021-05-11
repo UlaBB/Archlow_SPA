@@ -1,7 +1,7 @@
-const utils = {}; // eslint-disable-line no-unused-vars
+export const utils = {};
 
 utils.createDOMFromHTML = function (htmlString) {
-    let div = document.createElement('div');
-    div.innerHTML = htmlString.trim();
-    return div.firstChild;
+  let div = document.createElement('div');
+  div.innerHTML = htmlString.trim();
+  return div.firstChild;
 };
