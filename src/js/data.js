@@ -15,7 +15,7 @@ dataSource.articles = {
   },
   article_2: {
     id: 'article-1',
-    categoryTitle: 'Prawo budowlane',
+    categoryTitle: 'Ergonomia',
     title: 'Rewolucja w prawie budowlanym 2020?',
     author: 'Urszula Buczak',
     img: 'https://i.postimg.cc/0NdVSV4c/pexels-aleksandar-pasaric-325185.jpg',
@@ -39,7 +39,7 @@ dataSource.articles = {
   },
   article_4: {
     id: 'article-1',
-    categoryTitle: 'Prawo budowlane',
+    categoryTitle: 'Architektura',
     title: 'Rewolucja w prawie budowlanym 2020?',
     author: 'Urszula Buczak',
     img: 'https://i.postimg.cc/0NdVSV4c/pexels-aleksandar-pasaric-325185.jpg',
