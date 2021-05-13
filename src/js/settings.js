@@ -4,8 +4,22 @@ export const select = {
   },
   containerOf: {
     articles: '.posts .container',
+  },
+  wrapperOf: {
+    article: '.post',
+    category: '.category__item',
+  },
+  itemOf: {
+    option: '.category__item option',
   }
+
 };
+
+export const classNames = {
+  articles: {
+    active: 'post__active',
+  }
+}
 
 
 

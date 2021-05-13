@@ -3,7 +3,7 @@ import { Category } from '../components/Category.js';
 import { dataSource } from './data.js';
 
 const app = {
-  //describe the source od data
+  //describe the source of data
   initData: function () {
     this.data = dataSource;
   },
