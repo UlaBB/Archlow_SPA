@@ -19,7 +19,7 @@ export const classNames = {
   articles: {
     active: 'post__active',
   }
-}
+};
 
 
 

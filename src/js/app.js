@@ -1,6 +1,6 @@
 import { Article } from '../components/Article.js';
-import { Category } from '../components/Category.js';
 import { dataSource } from './data.js';
+import { select } from './settings.js';
 
 const app = {
   //describe the source of data
@@ -15,7 +15,23 @@ const app = {
     }
   },
   initCategories: function () {
-    new Category();
+    this.initData();
+
+    const categories = [];
+    const wrapperCategory = document.querySelector(select.wrapperOf.category);
+    wrapperCategory.innerHTML = '';
+
+    for (let articleData in this.data.articles) {
+      const element = this.data.articles[articleData].categoryTitle;
+      const categoryLink = '<option value="' + element + '">' + element + '</option>';
+      if (categories.indexOf(categoryLink) === -1) {
+        categories.push(categoryLink);
+      }
+    }
+    wrapperCategory.innerHTML = categories.sort().join(' ');
+  },
+  initTags: function () {
+
   },
   init: function () {
     this.initArticles();
