@@ -8,6 +8,7 @@ export const select = {
   wrapperOf: {
     article: '.post',
     category: '.category__item',
+    tagsCloud: '.tagsCloud__tags_List',
   },
   itemOf: {
     option: '.category__item option',
