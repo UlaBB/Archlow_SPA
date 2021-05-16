@@ -45,7 +45,7 @@ const app = {
       for (let tagArticle of tagsArticle) {
         const nameTag = tagArticle.innerHTML;
         if (!allTags.hasOwnProperty(nameTag)) {
-          allTags[nameTag] = 1
+          allTags[nameTag] = 1;
         }
         else {
           allTags[nameTag]++;
