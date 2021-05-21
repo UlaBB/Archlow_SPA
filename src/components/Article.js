@@ -6,7 +6,7 @@ export class Article {
         this.id = id;
         this.data = data;
         this.renderArticle();
-        //this.filterArticleByCategory();
+
     }
     renderArticle() {
         const generatedHTML = templates.articles(this.data);
@@ -14,7 +14,4 @@ export class Article {
         const articleContainer = document.querySelector(select.containerOf.articles);
         articleContainer.appendChild(this.element);
     }
-    // filterArticleByCategory() {
-
-    // }
 }

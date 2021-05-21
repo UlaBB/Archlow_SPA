@@ -41,6 +41,11 @@
     text-transform: uppercase;
   }
 
+  &__active{
+    color: $color-apricot;
+    font-size: 17px;
+  }
+
   &__toggler{
     display: flex;
     flex-direction: column;
