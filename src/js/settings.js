@@ -2,9 +2,14 @@ export const select = {
   templateOf: {
     articles: '#template-article-link',
   },
+  templateOf: {
+    articles: '#template-article-link',
+    sections: '#template-section-link',
+  },
   containerOf: {
     articles: '.post-articles',
     pages: '#pages',
+    sections: '.techCond__container',
   },
   wrapperOf: {
     article: '.post',
@@ -35,4 +40,5 @@ export const classNames = {
 
 export const templates = {
   articles: Handlebars.compile(document.querySelector(select.templateOf.articles).innerHTML),
+  sections: Handlebars.compile(document.querySelector(select.templateOf.sections).innerHTML),
 };

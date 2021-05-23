@@ -99,3 +99,37 @@ dataSource.articles = {
   },
 
 };
+
+
+dataSource.sections = {
+  dział_1: {
+    id: 'Dział-1',
+    sectionTitle: 'Dział 1',
+    sectionSubTitle: 'Przepisy ogólne',
+  },
+  dział_2: {
+    id: 'Dział-1',
+    sectionTitle: 'Dział 1',
+    sectionSubTitle: 'Przepisy ogólne',
+  },
+  dział_3: {
+    id: 'Dział-1',
+    sectionTitle: 'Dział 1',
+    sectionSubTitle: 'Przepisy ogólne',
+  },
+  dział_4: {
+    id: 'Dział-1',
+    sectionTitle: 'Dział 1',
+    sectionSubTitle: 'Przepisy ogólne',
+  },
+  dział_5: {
+    id: 'Dział-1',
+    sectionTitle: 'Dział 1',
+    sectionSubTitle: 'Przepisy ogólne',
+  },
+  dział_6: {
+    id: 'Dział-1',
+    sectionTitle: 'Dział 1',
+    sectionSubTitle: 'Przepisy ogólne',
+  },
+}

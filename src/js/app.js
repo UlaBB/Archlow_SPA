@@ -1,4 +1,6 @@
+
 import { Article } from '../components/Article.js';
+import { Section } from '../components/Section.js';
 import { dataSource } from './data.js';
 import { select, classNames } from './settings.js';
 
@@ -30,23 +32,32 @@ const app = {
     }
     wrapperCategory.innerHTML = categories.sort().join(' ');
   },
-  // generateTagsInArticle: function () {
-  //   const articles = document.querySelectorAll(select.wrapperOf.article);
+  initSections: function () {
+    this.initData();
 
-  //   for (let article of articles) {
-  //     const tagsArticleList = article.querySelector('.post__post-tags__list');
-  //     tagsArticleList.innerHTML = '';
-  //     let html = '';
-  //     const tagsArticle = article.getAttribute('data-tags');
-  //     const singleTagsArticle = tagsArticle.split(',');
-  //     for (let singleTag of singleTagsArticle) {
+    for (let sectionData in this.data.sections) {
+      new Section(this.data.sections[sectionData].id, this.data.sections[sectionData]);
+    }
 
-  //       const linkHtml = '<li class="post__post-tags__list__item" data-singleTag="' + singleTag + '"> <a href="#' + singleTag + '">' + singleTag + '</a></li> ';
-  //       html += linkHtml;
-  //     }
-  //     tagsArticleList.innerHTML = html;
-  //   }
-  // },
+
+  },
+  generateTagsInArticle: function () {
+    const articles = document.querySelectorAll(select.wrapperOf.article);
+
+    for (let article of articles) {
+      const tagsArticleList = article.querySelector('.post__post-tags__list');
+      tagsArticleList.innerHTML = '';
+      let html = '';
+      const tagsArticle = article.getAttribute('data-tags');
+      const singleTagsArticle = tagsArticle.split(',');
+      for (let singleTag of singleTagsArticle) {
+
+        const linkHtml = '<li class="post__post-tags__list__item" data-singleTag="' + singleTag + '"> <a href="#' + singleTag + '">' + singleTag + '</a></li> ';
+        html += linkHtml;
+      }
+      tagsArticleList.innerHTML = html;
+    }
+  },
   initTagsCloud: function () {
     const tagCloudWrapper = document.querySelector(select.wrapperOf.tagsCloud);
     tagCloudWrapper.innerHTML = '';
@@ -117,14 +128,26 @@ const app = {
       });
     }
   },
+
   initPages: function () {
+
     this.pages = Array.from(document.querySelector(select.containerOf.pages).children);
     console.log(this.pages);
 
     this.navLinks = Array.from(document.querySelectorAll(select.nav.links));
     console.log(this.navLinks);
 
-    this.activePage(this.pages[0].id);
+    let pagesMatchingHash = [];
+
+    if (window.location.hash.length > 2) {
+      const idFromHash = window.location.hash.replace('#/', '');//example: archlow
+      console.log('idFromHash:', idFromHash);
+
+
+      pagesMatchingHash = this.pages.filter(function (page) {
+        return page.id == idFromHash;
+      });
+    }
 
     for (let link of this.navLinks) {
       link.addEventListener('click', function (e) {
@@ -137,8 +160,11 @@ const app = {
       });
     }
 
+    console.log(pagesMatchingHash);
 
+    app.activePage(pagesMatchingHash.length ? pagesMatchingHash[0].id : this.pages[0].id);
   },
+
   activePage: function (pageId) {
 
     for (let link of this.navLinks) {
@@ -148,11 +174,15 @@ const app = {
     for (let page of this.pages) {
       page.classList.toggle(classNames.pages.active, page.id == pageId);
     }
+
+    window.location.hash = '#/' + pageId;
   },
+
   init: function () {
     this.initPages();
     this.initArticles();
     this.initCategories();
+    this.initSections();
     //this.generateTagsInArticle();
     this.initTagsCloud();
     this.filterCategories();

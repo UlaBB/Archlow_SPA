@@ -11,7 +11,7 @@ export class Article {
     renderArticle() {
         const generatedHTML = templates.articles(this.data);
         this.element = utils.createDOMFromHTML(generatedHTML);
-        const articleContainer = document.querySelector(select.containerOf.articles);
-        articleContainer.appendChild(this.element);
+        const articlesContainer = document.querySelector(select.containerOf.articles);
+        articlesContainer.appendChild(this.element);
     }
 }

@@ -21,14 +21,17 @@
         </div>
         <ul class="nav__menu flex">
           <li class="nav__item">
-            <a href="#przepisyBudowlane" class="nav__link">Przepisy budowlane</a>
+            <a href="#warunkiTechniczne" class="nav__link">Warunki techniczne</a>
           </li>
+
+          <li class="nav__item">
+            <a href="#sekcje" class="nav__link">Sekcje</a>
+          </li>
+
           <li class="nav__item">
             <a href="#blog" class="nav__link">Blog</a>
           </li>
-          <li class="nav__item">
-            <a href="#oMnie" class="nav__link">O mnie</a>
-          </li>
+
           <li class="nav__item">
             <a href="#kontakt" class="btn nav__link">Kontakt</a>
           </li>
@@ -51,9 +54,18 @@
     </section>
 
     <!--technical conditions-->
-    <section id="przepisyBudowlane">
+    <section id="warunkiTechniczne">
       <div id="" class="main-page container">
-        przepisyBudowlane</div>
+        <div class="techCond__container">
+          <!-- js code template handlbars-->
+        </div>
+      </div>
+    </section>
+
+    <!--technical about me-->
+    <section id="sekcje">
+      <div id="" class="main-page container">
+        oMnie</div>
     </section>
 
     <!-- blog-->
@@ -131,12 +143,6 @@
       </section>
     </section>
 
-    <!--technical about me-->
-    <section id="oMnie">
-      <div id="" class="main-page container">
-        oMnie</div>
-    </section>
-
     <!--contact-->
     <section id="Kontakt">
       <div id="" class="main-page container">
@@ -145,18 +151,28 @@
 
   </div>
 
+  <script id="template-section-link" type="text/x-handlebars-template">
+    <section>
+      <div>
+        <h3>{{sectionTitle}}</h3>
+        <h4>{{sectionSubTitle}}</h4>
+      </div>
+    </section>
+  </script>
+
+
   <script id="template-article-link" type="text/x-handlebars-template">
-      <article class="post post__active" id="{{id}}" data-category="{{categoryTitle}}" 
+    <article class="post post__active" id="{{id}}" data-category="{{categoryTitle}}" 
         data-author="{{author}}">
-        <div class="container__inner">
+      <div class="container__inner">
         <div class="post__entry-image">
           <a href={{link}}><img class="post__image"
-                              src={{img}}
-                              alt="img_post"></a>
+                                src={{img}}
+                                alt="img_post"></a>
           <time class="post__time-updated" datetime="2020-11-01T08:12:10+00:00">{{data}}</time>
         </div>
 
-                  <div class="post__entry-content">
+        <div class="post__entry-content">
                       <header class="post__entry-content__title">
                           <ul class="post__entry-content__categories">
                               <li><a class="post__entry-content__link" href="">{{categoryTitle}}</a></li>
@@ -189,9 +205,9 @@
                           </ul>
                       </div>
                   </div>
-              </div>
-      </article>
-    </script>
+      </div>
+    </article>
+  </script>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
