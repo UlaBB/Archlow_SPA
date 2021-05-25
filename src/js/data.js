@@ -104,32 +104,37 @@ dataSource.articles = {
 dataSource.sections = {
   dział_1: {
     id: 'Dział-1',
-    sectionTitle: 'Dział 1',
+    sectionTitle: 'Dział I',
     sectionSubTitle: 'Przepisy ogólne',
+    sectionIcon: 'fab fa-simplybuilt',
   },
   dział_2: {
-    id: 'Dział-1',
-    sectionTitle: 'Dział 1',
-    sectionSubTitle: 'Przepisy ogólne',
+    id: 'Dział-2',
+    sectionTitle: 'Dział II',
+    sectionSubTitle: 'Zabudowa i zagospodarowanie działki budowlanej',
+    sectionIcon: 'fab fa-simplybuilt',
   },
   dział_3: {
-    id: 'Dział-1',
-    sectionTitle: 'Dział 1',
-    sectionSubTitle: 'Przepisy ogólne',
+    id: 'Dział-3',
+    sectionTitle: 'Dział III',
+    sectionSubTitle: 'Budynki i pomieszczenia',
   },
   dział_4: {
     id: 'Dział-1',
     sectionTitle: 'Dział 1',
     sectionSubTitle: 'Przepisy ogólne',
+    sectionIcon: 'fab fa-simplybuilt',
   },
   dział_5: {
     id: 'Dział-1',
     sectionTitle: 'Dział 1',
     sectionSubTitle: 'Przepisy ogólne',
+    sectionIcon: 'fab fa-simplybuilt',
   },
   dział_6: {
     id: 'Dział-1',
     sectionTitle: 'Dział 1',
     sectionSubTitle: 'Przepisy ogólne',
+    sectionIcon: 'fab fa-simplybuilt',
   },
-}
+};

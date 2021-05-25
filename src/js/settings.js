@@ -1,7 +1,5 @@
 export const select = {
-  templateOf: {
-    articles: '#template-article-link',
-  },
+
   templateOf: {
     articles: '#template-article-link',
     sections: '#template-section-link',
@@ -9,7 +7,7 @@ export const select = {
   containerOf: {
     articles: '.post-articles',
     pages: '#pages',
-    sections: '.techCond__container',
+    sections: '.section__wrapper',
   },
   wrapperOf: {
     article: '.post',
