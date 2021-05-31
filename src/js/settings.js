@@ -14,9 +14,14 @@ export const select = {
     category: '.category__item',
     tagsCloud: '.tagsCloud__tags_List',
   },
+  all: {
+    activeSections: '.section__container > .section__container_wrap.active'
+  },
+
   itemOf: {
     option: '.category__item option, .post__entry-content__link',
     tags: '.post__post-tags__list__item',
+    accordion: '.section__icon',
   },
   nav: {
     links: '.nav__link',
@@ -31,6 +36,9 @@ export const classNames = {
     active: 'nav__active',
   },
   pages: {
+    active: 'active',
+  },
+  technicalCondWrapper: {
     active: 'active',
   }
 };

@@ -7,3 +7,9 @@ utils.createDOMFromHTML = function (htmlString) {
   div.innerHTML = htmlString.trim();
   return div.firstChild;
 };
+
+utils.eachNewLine = function (str, options) {
+  var accum = '';
+  var data = Handlebars.createFrame(options, options.hash);
+  var arr = str.split(/\r?\n/);
+}

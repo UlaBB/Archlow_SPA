@@ -132,17 +132,13 @@ const app = {
   initPages: function () {
 
     this.pages = Array.from(document.querySelector(select.containerOf.pages).children);
-    console.log(this.pages);
 
     this.navLinks = Array.from(document.querySelectorAll(select.nav.links));
-    console.log(this.navLinks);
 
     let pagesMatchingHash = [];
 
     if (window.location.hash.length > 2) {
       const idFromHash = window.location.hash.replace('#/', '');//example: archlow
-      console.log('idFromHash:', idFromHash);
-
 
       pagesMatchingHash = this.pages.filter(function (page) {
         return page.id == idFromHash;
@@ -154,13 +150,10 @@ const app = {
         e.preventDefault();
 
         const idPage = this.getAttribute('href').replace('#', '');
-        console.log(idPage);
 
         app.activePage(idPage);
       });
     }
-
-    console.log(pagesMatchingHash);
 
     app.activePage(pagesMatchingHash.length ? pagesMatchingHash[0].id : this.pages[0].id);
   },

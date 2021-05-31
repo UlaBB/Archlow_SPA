@@ -186,17 +186,28 @@
   </div>
 
   <script id="template-section-link" type="text/x-handlebars-template">
-
-
-      <div class="section__container">
+    <div class="section__container">
+      <div class="section__container_wrap">
         <div class="section__con_text">
           <h3>{{sectionTitle}}</h3>
           <h4>{{sectionSubTitle}}</h4>
+          <i class="fas fa-chevron-down section__icon"></i>
         </div>
-        <div class="section__con_icon">
-          
+        <div class="section__con__content">
+          <ul class="section_con__list">
+            {{#each sectionContent}}
+            <li class="section_con__listElement">
+              <h3>{{numberOfParagraph}} {{label}}</h3>
+              <p>{{{content}}}</p>
+              {{#each option}}
+              <p class="addingOption">{{this}}</p>
+              {{/each}}
+            </li>
+            {{/each}}
+          </ul>
         </div>
       </div>
+    </div>
      
    
   </script>
