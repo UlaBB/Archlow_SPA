@@ -17,20 +17,23 @@ export class Section {
     }
 
     initAccordion() {
-        console.log(this.element);
+        const thisSection = this;
+        console.log('this.element:', this.element);//section_container
         const clickableElement = this.element.querySelector('.section__con_text');
-        const technicalOption = this.element.querySelector('.section__container_wrap');
+        const technicalOption = thisSection.element;
+
         clickableElement.addEventListener('click', function (e) {
             e.preventDefault();
-            technicalOption.classList.toggle(classNames.technicalCondWrapper.active);
+            thisSection.element.classList.toggle(classNames.technicalCondWrapper.active);
 
             const activeSections = document.querySelectorAll(select.all.activeSections);
 
             console.log('active:', activeSections);
 
 
+
             for (let activeSection of activeSections) {
-                if (activeSection != clickedSection) {
+                if (activeSection != thisSection.element) {
                     activeSection.classList.remove(classNames.technicalCondWrapper.active);
                 }
             }

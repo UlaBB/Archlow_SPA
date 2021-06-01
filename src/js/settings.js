@@ -15,7 +15,7 @@ export const select = {
     tagsCloud: '.tagsCloud__tags_List',
   },
   all: {
-    activeSections: '.section__container > .section__container_wrap.active'
+    activeSections: '.section__container.active'
   },
 
   itemOf: {

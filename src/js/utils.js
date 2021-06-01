@@ -8,8 +8,8 @@ utils.createDOMFromHTML = function (htmlString) {
   return div.firstChild;
 };
 
-utils.eachNewLine = function (str, options) {
-  var accum = '';
-  var data = Handlebars.createFrame(options, options.hash);
-  var arr = str.split(/\r?\n/);
-}
+// utils.eachNewLine = function (str, options) {
+//   var accum = '';
+//   var data = Handlebars.createFrame(options, options.hash);
+//   var arr = str.split(/\r?\n/);
+// }

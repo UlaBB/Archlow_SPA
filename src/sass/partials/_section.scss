@@ -24,7 +24,6 @@
   align-content: center;
 }
 
-
 .section__container:hover{
   cursor: pointer;
   background: $color-border;
@@ -33,8 +32,6 @@
     color: $color-element;
   }
 }
-
-
 
 .section__con_text {
   height: 150px;
@@ -51,6 +48,7 @@
     font-size: 25px;
   }   
 }
+
 .section__icon {
   margin-top: 15px;
   transition: all 0.5s;
@@ -70,34 +68,41 @@
     transform-origin: top center;
     transform: rotateX(-90deg);
   }
+
   20% {
     opacity: 1;
   }
+
   80% {
     transform: rotateX(8deg);
   }
+
   83% {
-  transform: rotateX(6deg);
+    transform: rotateX(6deg);
   }
+
   92% {
-  transform: rotateX(-3deg);
+    transform: rotateX(-3deg);
   }
+
   100% {
-  transform-origin: top center;
-  transform: rotateX(0deg);
+    transform-origin: top center;
+    transform: rotateX(0deg);
   }
 }
 
-.section__container_wrap.active .section__icon{
+.section__container.active .section__icon{
   transform: rotate(180deg);
 }
-.section__container_wrap.active .section__con__content{
+
+.section__container.active .section__con__content{
   display: block;
 }
 
 .section_con__list{
   list-style: none;
 }
+
 .section_con__listElement{
   margin: 10px;
 }
