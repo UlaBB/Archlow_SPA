@@ -21,3 +21,27 @@
   border: 1px solid $color-element;
   color: $color-element;
 }
+
+.btn__loginPanel{
+  margin: 3px;
+  height: 28px;
+  width: 125px;
+  border-radius: 25px;
+  background-color: $color-apricot;
+  border: 1px solid $base__background-color;
+  color: $base__background-color;
+  cursor: pointer;
+  font-size: 15px;
+
+  &__small{
+    margin: 5px;
+    width: 52px;
+    height: 20px;
+    background-color: $color-apricot-dark;
+    border:none;
+    border-radius: 15px;
+    color: $base__background-color;
+    cursor: pointer;
+  }
+}
+

@@ -1,0 +1,36 @@
+.loginPanel__wrapper {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: $base__background-color;
+}
+
+
+.loginPanel__container {
+  height: 50vh;
+  background-color: $color-apricot;
+}
+
+.loginPanel__text{
+  margin: 25px 0;
+  text-align: center;
+}
+
+.loginPanel__downText{
+  margin: 20px 0;
+  text-align: center;
+}
+
+.loginPanel__formSignUP{
+  display: none;
+}
+
+.loginPanel__formSignUP .active{
+  display: block;
+}
+
+.main__image_photo{
+  border: 1px solid red;
+  height: 50vh;
+}

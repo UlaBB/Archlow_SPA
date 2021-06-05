@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <title>ARCHLOW_SPA</title>
@@ -13,61 +13,57 @@
 
 <body>
 
-  <header class="header">
-    <div class="container">
-      <nav class="nav flex">
-        <div class="nav__logo nav__brand">
-          <a href="#archlow" class="nav__link">archlow</a>
-        </div>
-        <ul class="nav__menu flex">
-          <li class="nav__item">
-            <a href="#warunkiTechniczne" class="nav__link">Warunki techniczne</a>
-          </li>
-
-          <li class="nav__item">
-            <a href="#sekcje" class="nav__link">Sekcje</a>
-          </li>
-
-          <li class="nav__item">
-            <a href="#blog" class="nav__link">Blog</a>
-          </li>
-
-          <li class="nav__item">
-            <a href="#kontakt" class="btn nav__link">Kontakt</a>
-          </li>
-        </ul>
-        <div class="nav__toggler">
-          <div class="nav__bar"></div>
-          <div class="nav__bar"></div>
-          <div class="nav__bar"></div>
-          <div class="nav__bar"></div>
-        </div>
-      </nav>
-    </div>
-  </header>
-
   <div id="pages">
     <!--home pages-->
     <section id="archlow">
       <div class="main-page container">
-        <div class="main__image">
+        <div class="loginPanel__wrapper">
           <div class="main__image_photo">
-
+            <img src="" alt="">
           </div>
-          <div class="loginPanel">
+          <div class="loginPanel__container">
             <div class="loginPanel__text">
-              <h3>Archlow</h3>
+              <h1>ARCHLOW</h1>
               <h4>Projektuj zgodnie z przepisami</h4>
             </div>
-            <div class="loginForm">
-              <button>username</button>
-              <button>password</button>
-              <button>login</button>
+            <div class="loginPanel_buttons flex-column">
+              <button class="btn__loginPanel">username</button>
+              <button class="btn__loginPanel">password</button>
+              <button class="btn__loginPanel__small">Login</button>
             </div>
-            <div class="signUp__text">
+            <div class="loginPanel__downText">
               <h4>Don't you have an account yet?</h4>
               <h3>Create an account</h3>
             </div>
+
+            <div class="loginPanel__formSignUP" id="signUpForm">
+              <form class="modal-content" action="/action_page.php">
+                <h1>Sign Up</h1>
+                <p>Please fill in this form to create an account.</p>
+                <hr>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <label for="psw-repeat"><b>Repeat Password</b></label>
+                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+                <label>
+                  <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                </label>
+
+                <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+                <div class="clearfix">
+                  <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                    class="cancelbtn">Cancel</button>
+                  <button type="submit" class="signup">Sign Up</button>
+                </div>
+              </form>
+            </div>
+
           </div>
         </div>
       </div>
@@ -204,6 +200,39 @@
     </section>
 
   </div>
+
+  <header class="header">
+    <div class="container">
+      <nav class="nav flex">
+        <div class="nav__logo nav__brand">
+          <a href="#archlow" class="nav__link">archlow</a>
+        </div>
+        <ul class="nav__menu flex">
+          <li class="nav__item">
+            <a href="#warunkiTechniczne" class="nav__link">Warunki techniczne</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#sekcje" class="nav__link">Sekcje</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#blog" class="nav__link">Blog</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#kontakt" class="btn nav__link">Kontakt</a>
+          </li>
+        </ul>
+        <div class="nav__toggler">
+          <div class="nav__bar"></div>
+          <div class="nav__bar"></div>
+          <div class="nav__bar"></div>
+          <div class="nav__bar"></div>
+        </div>
+      </nav>
+    </div>
+  </header>
 
   <script id="template-section-link" type="text/x-handlebars-template">
 
