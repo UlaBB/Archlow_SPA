@@ -1,36 +1,66 @@
+
 .loginPanel__wrapper {
-  height: 85vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   color: $base__background-color;
 }
 
-
-.loginPanel__container {
-  height: 50vh;
-  background-color: $color-apricot;
+.loginPanel__mainPanel{
+  height: 80vh;
+  background: $color-apricot;
+  border-radius: 0 0 100px 0;
 }
 
 .loginPanel__text{
-  margin: 25px 0;
+  width: 200px;
+  transform: translateY(300px);
+
+  >h1, h2{
+    margin: 10px 0;
+    line-height: 1.4;
+  }
+
+  >h1{
+    font-weight: bolder;
+    letter-spacing: 5px;
+  }
+
+  h2 {
+    font-weight: 500;
+    letter-spacing: 0.4px;
+
+    >span{
+      margin-top: 20px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+  }
+}
+
+.loginPanel__start {
+  height: 20vh;
+  background-color: $base__background-color;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.loginPanel_btn {
+  height: 30px;
+  width: 150px;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: $color-apricot;
+  border: 1px solid $base__background-color;
+  color: $base__background-color;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 12px;
+  font: bolder;
   text-align: center;
+  line-height: 0.5;
+  letter-spacing: 2px;
 }
 
-.loginPanel__downText{
-  margin: 20px 0;
-  text-align: center;
-}
 
-.loginPanel__formSignUP{
-  display: none;
-}
 
-.loginPanel__formSignUP .active{
-  display: block;
-}
-
-.main__image_photo{
-  border: 1px solid red;
-  height: 50vh;
-}

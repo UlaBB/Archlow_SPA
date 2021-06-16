@@ -129,6 +129,17 @@ const app = {
     }
   },
 
+  initApp: function () {
+    const startBtn = document.querySelector('#btn__start');
+    startBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      console.log('Wchodzę na głowną strone');
+      // chowam wszystkie podstrony
+      const subContainerPages = document.querySelector('#pages, #header');
+      subContainerPages.classList.add(classNames.nav.active);
+    });
+  },
+
   initPages: function () {
 
     this.pages = Array.from(document.querySelector(select.containerOf.pages).children);
@@ -150,6 +161,7 @@ const app = {
         e.preventDefault();
 
         const idPage = this.getAttribute('href').replace('#', '');
+        console.log(idPage);
 
         app.activePage(idPage);
       });
@@ -172,7 +184,8 @@ const app = {
   },
 
   init: function () {
-    this.initPages();
+    this.initApp();
+    //this.initPages();
     this.initArticles();
     this.initCategories();
     this.initSections();

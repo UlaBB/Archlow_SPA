@@ -24,8 +24,9 @@
 
 .btn__loginPanel{
   margin: 3px;
+  padding: 3px 5px;
   height: 28px;
-  width: 125px;
+  min-width: 125px;
   border-radius: 25px;
   background-color: $color-apricot;
   border: 1px solid $base__background-color;
@@ -38,7 +39,7 @@
     width: 52px;
     height: 20px;
     background-color: $color-apricot-dark;
-    border:none;
+    border: none;
     border-radius: 15px;
     color: $base__background-color;
     cursor: pointer;
