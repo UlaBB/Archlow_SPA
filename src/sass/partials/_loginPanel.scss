@@ -11,11 +11,44 @@
   border-radius: 0 0 100px 0;
 }
 
+.loginPanel__startPanel{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.loginPanel__sandwich{
+  display: flex;
+  flex-direction: column;
+}
+
+.loginPanel__sandwich__a{
+  width: 26px;
+  height: 2px;
+  background-color: $base__background-color;
+  margin: 2px 0;
+}
+
+.loginPanel__sandwich__b{
+  width: 18px;
+  height: 2px;
+  background-color: $base__background-color;
+  margin: 2px 0;
+}
+
+.loginPanel__logo{
+  height: 20px;
+  width: 20px;
+  background-color: $base__background-color;
+  border-radius: 20px;
+}
+
 .loginPanel__text{
   width: 200px;
   transform: translateY(300px);
 
-  >h1, h2{
+  >h1, h3{
     margin: 10px 0;
     line-height: 1.4;
   }
@@ -25,7 +58,7 @@
     letter-spacing: 5px;
   }
 
-  h2 {
+  h3 {
     font-weight: 500;
     letter-spacing: 0.4px;
 
@@ -46,8 +79,8 @@
 }
 
 .loginPanel_btn {
-  height: 30px;
-  width: 150px;
+  height: 35px;
+  width: 160px;
   border-radius: 15px;
   padding: 10px;
   background-color: $color-apricot;
@@ -55,12 +88,9 @@
   color: $base__background-color;
   cursor: pointer;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 16px;
   font: bolder;
   text-align: center;
   line-height: 0.5;
   letter-spacing: 2px;
 }
-
-
-
