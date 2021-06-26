@@ -21,6 +21,7 @@
 .loginPanel__sandwich{
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .loginPanel__sandwich__a{
@@ -54,7 +55,7 @@
   }
 
   >h1{
-    font-weight: bolder;
+    font-weight: extra-bold;
     letter-spacing: 5px;
   }
 
@@ -78,7 +79,7 @@
   align-items: center;
 }
 
-.loginPanel_btn {
+.loginPanel__btn {
   height: 35px;
   width: 160px;
   border-radius: 15px;
@@ -93,4 +94,11 @@
   text-align: center;
   line-height: 0.5;
   letter-spacing: 2px;
+  transition: background-color 0.3s;
+}
+
+.loginPanel__btn:hover{
+  background-color: $base__background-color;
+  color: $color-apricot;
+  border: 1px solid $color-apricot;
 }

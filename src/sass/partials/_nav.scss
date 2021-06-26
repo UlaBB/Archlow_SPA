@@ -1,8 +1,8 @@
 
-#pages > * {
+section {
   display: none;
 }
 
-#pages > .active{
+section.active {
   display: block;
 }

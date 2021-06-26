@@ -129,16 +129,25 @@ const app = {
     }
   },
 
+  // init start button
   initApp: function () {
-    const startBtn = document.querySelector('#btn__start');
-    startBtn.addEventListener('click', function (e) {
+    const initBtn = document.querySelector(select.buttonOf.initApp);
+
+    initBtn.addEventListener('click', function (e) {
       e.preventDefault();
-      console.log('Wchodzę na głowną strone');
-      // chowam wszystkie podstrony
-      const subContainerPages = document.querySelector('#pages, #header');
-      subContainerPages.classList.add(classNames.nav.active);
+      app.startApp();
     });
   },
+
+  startApp:
+    function () {
+      const mainPage = document.querySelector(select.pages.mainPage);
+      const conditionPage = document.querySelector(select.pages.conditionsPage);
+
+      mainPage.classList.remove(classNames.pages.active);
+      conditionPage.classList.add(classNames.pages.active);
+    },
+
 
   initPages: function () {
 

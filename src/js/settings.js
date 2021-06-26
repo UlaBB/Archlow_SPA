@@ -1,5 +1,11 @@
 export const select = {
-
+  buttonOf: {
+    initApp: '#btn__start',
+  },
+  pages: {
+    mainPage: '#archlow',
+    conditionsPage: '#warunkiTechniczne',
+  },
   templateOf: {
     articles: '#template-article-link',
     sections: '#template-section-link',

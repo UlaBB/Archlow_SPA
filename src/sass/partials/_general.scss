@@ -6,6 +6,23 @@
   font-family: 'Raleway', sans-serif;
 }
 
+body {
+  margin: 0;
+  background: lighten($color-dark, 75%);
+  font-family: $font-text;
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: $font-normal;
+  color: $color-dark;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
 section{
   width: 100vw;
   margin: 0 auto;
@@ -25,7 +42,7 @@ section{
   .container {
     max-width: 720px;
   }
-  
+
   .container__inner{
     max-width: 335px;
   }
@@ -71,7 +88,7 @@ section{
 }
 
 h1{
-  font-size: 35px;
+  font-size: 36px;
 }
 
 h2{
@@ -95,6 +112,4 @@ p{
   margin: 10px 0;
 }
 
-.pages__active {
-  opacity: 1;
-}
+
