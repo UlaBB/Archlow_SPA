@@ -3,17 +3,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Raleway', sans-serif;
+
 }
 
 body {
   margin: 0;
-  background: lighten($color-dark, 75%);
-  font-family: $font-text;
+  //background: lighten($color-dark, 75%);
   font-size: 14px;
   line-height: 1.7;
-  font-weight: $font-normal;
-  color: $color-dark;
+  font-family: 'Raleway', sans-serif;
+  //color: $color-dark;
 }
 
 .container {
@@ -93,7 +92,6 @@ h1{
 
 h2{
   font-size: 20px;
-  font-weight: 200;
 }
 
 h3{

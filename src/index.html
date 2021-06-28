@@ -4,12 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,900&display=swap"
     rel="stylesheet">
-  <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+    type="text/css">
   <link rel="stylesheet" href="css/style.css">
   <title>ARCHLOW_SPA</title>
 </head>
@@ -48,24 +47,29 @@
   <div id="pages">
     <!--technical conditions-->
     <section id="warunkiTechniczne">
-      <div class="container">
-        <div class="pages__header">
+
+      <div class="pages__header">
+        <div class="container">
           <div class="pages__header__list">
-            <i class="fas fa-chevron-left"></i>
+            <div class="pages__header__arrow">
+              <i id="pages__icon__back" class="fa fa-angle-left pages__icon"></i>
+            </div>
             <div class="loginPanel__logo">
               <div class="loginPanel__logo__symbol"></div>
             </div>
           </div>
           <div class="pages__header__text">
-            <h3>Warunki techniczne</h3>
+            <h2>Warunki<br>techniczne</h2>
           </div>
         </div>
       </div>
+
       <div class="container">
         <div class="section__wrapper">
           <!-- js code template handlbars-->
         </div>
       </div>
+
     </section>
 
     <!--technical about me-->
@@ -197,7 +201,6 @@
         <div class="section__con_text">
           <h3>{{sectionTitle}}</h3>
           <h4>{{sectionSubTitle}}</h4>
-          <i class="fas fa-chevron-down section__icon"></i>
         </div>
         <div class="section__con__content">
           <ul class="section_con__list">
