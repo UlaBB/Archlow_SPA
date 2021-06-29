@@ -3,12 +3,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 .section__container {
   width: 100%;
-  min-height: 70px;
+  min-height: 90px;
   margin-bottom: 20px;
   background: $color-apricot;
   border-radius: 20px;
@@ -34,11 +34,9 @@
 
 .section__con_text {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-left: 25px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 25px;
   color: $base__background-color;
 
   > h3 {
@@ -47,14 +45,13 @@
 }
 
 .section__icon {
-  margin-top: 15px;
+  font-size: 20px;
   transition: all 0.5s;
 }
 
 
 .section__con__content{
   background-color: $base__background-color;
-  border: 1px solid red;
   display: none;
   animation: flipdown 0.8s ease both;
 }

@@ -45,9 +45,8 @@
   </section>
 
   <div id="pages">
-    <!--technical conditions-->
+    <!--start technical conditions-->
     <section id="warunkiTechniczne">
-
       <div class="pages__header">
         <div class="container">
           <div class="pages__header__list">
@@ -63,14 +62,13 @@
           </div>
         </div>
       </div>
-
       <div class="container">
         <div class="section__wrapper">
           <!-- js code template handlbars-->
         </div>
       </div>
-
     </section>
+    <!--end technical conditions-->
 
     <!--technical about me-->
     <section id="sekcje">
@@ -195,12 +193,16 @@
   </header>
 
   <script id="template-section-link" type="text/x-handlebars-template">
-
     <div class="section__container">
       <div class="section__container_wrap">
         <div class="section__con_text">
-          <h3>{{sectionTitle}}</h3>
-          <h4>{{sectionSubTitle}}</h4>
+          <div class="section__con_text_title">
+            <h3>{{sectionTitle}}</h3>
+            <h4>{{sectionSubTitle}}</h4>
+          </div>
+          <div class="section__icon">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
         </div>
         <div class="section__con__content">
           <ul class="section_con__list">
