@@ -1,5 +1,5 @@
 .pages__header{
-  height: 25vh;
+  height: 35vh;
   width: 100vw;
   background-color: $color-apricot;
   border-radius: 0 0 100px 0;
@@ -26,4 +26,8 @@
   font-weight: bold;
   letter-spacing: 2px;
   margin: 10px 0;
+
+  span{
+    letter-spacing: normal;
+  }
 }

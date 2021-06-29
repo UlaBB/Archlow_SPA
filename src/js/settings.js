@@ -1,6 +1,7 @@
 export const select = {
   buttonOf: {
     initApp: '#btn__start',
+    backStartPage: '#pages__icon__back',
   },
   pages: {
     mainPage: '#archlow',

@@ -1,4 +1,32 @@
 
+.navPanel{
+  width: 100%;
+  height: 160px;
+  background-color: $base__background-color;
+  color: $color-apricot;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  display: none;
+}
+
+.navPanel__list{
+  list-style: none;
+  text-transform: uppercase;
+  li{
+    margin-bottom: 10px;
+    a{
+      color: $color-apricot;
+      font-weight: bold;
+    }
+    a:hover{
+      color: $color-apricot-dark;
+    }
+  }
+}
+
+
 section {
   display: none;
 }

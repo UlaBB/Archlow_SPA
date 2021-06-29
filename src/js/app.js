@@ -139,61 +139,72 @@ const app = {
     });
   },
 
-  startApp:
-    function () {
+  startApp: function () {
+    const mainPage = document.querySelector(select.pages.mainPage);
+    const conditionPage = document.querySelector(select.pages.conditionsPage);
+
+    mainPage.classList.remove(classNames.pages.active);
+    conditionPage.classList.add(classNames.pages.active);
+  },
+
+  backStartPage: function () {
+    const backStartPageBtn = document.querySelector(select.buttonOf.backStartPage);
+
+    backStartPageBtn.addEventListener('click', function (e) {
+      e.preventDefault();
       const mainPage = document.querySelector(select.pages.mainPage);
       const conditionPage = document.querySelector(select.pages.conditionsPage);
-
-      mainPage.classList.remove(classNames.pages.active);
-      conditionPage.classList.add(classNames.pages.active);
-    },
-
-
-  initPages: function () {
-
-    this.pages = Array.from(document.querySelector(select.containerOf.pages).children);
-
-    this.navLinks = Array.from(document.querySelectorAll(select.nav.links));
-
-    let pagesMatchingHash = [];
-
-    if (window.location.hash.length > 2) {
-      const idFromHash = window.location.hash.replace('#/', '');//example: archlow
-
-      pagesMatchingHash = this.pages.filter(function (page) {
-        return page.id == idFromHash;
-      });
-    }
-
-    for (let link of this.navLinks) {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        const idPage = this.getAttribute('href').replace('#', '');
-        console.log(idPage);
-
-        app.activePage(idPage);
-      });
-    }
-
-    app.activePage(pagesMatchingHash.length ? pagesMatchingHash[0].id : this.pages[0].id);
+      mainPage.classList.add(classNames.pages.active);
+      conditionPage.classList.remove(classNames.pages.active);
+    });
   },
 
-  activePage: function (pageId) {
+  // initPages: function () {
 
-    for (let link of this.navLinks) {
-      link.classList.toggle(classNames.nav.active, link.getAttribute('href') == '#' + pageId);
-    }
+  //   this.pages = Array.from(document.querySelector(select.containerOf.pages).children);
 
-    for (let page of this.pages) {
-      page.classList.toggle(classNames.pages.active, page.id == pageId);
-    }
+  //   this.navLinks = Array.from(document.querySelectorAll(select.nav.links));
 
-    window.location.hash = '#/' + pageId;
-  },
+  //   let pagesMatchingHash = [];
+
+  //   if (window.location.hash.length > 2) {
+  //     const idFromHash = window.location.hash.replace('#/', '');//example: archlow
+
+  //     pagesMatchingHash = this.pages.filter(function (page) {
+  //       return page.id == idFromHash;
+  //     });
+  //   }
+
+  //   for (let link of this.navLinks) {
+  //     link.addEventListener('click', function (e) {
+  //       e.preventDefault();
+
+  //       const idPage = this.getAttribute('href').replace('#', '');
+  //       console.log(idPage);
+
+  //       app.activePage(idPage);
+  //     });
+  //   }
+
+  //   app.activePage(pagesMatchingHash.length ? pagesMatchingHash[0].id : this.pages[0].id);
+  // },
+
+  // activePage: function (pageId) {
+
+  //   for (let link of this.navLinks) {
+  //     link.classList.toggle(classNames.nav.active, link.getAttribute('href') == '#' + pageId);
+  //   }
+
+  //   for (let page of this.pages) {
+  //     page.classList.toggle(classNames.pages.active, page.id == pageId);
+  //   }
+
+  //   window.location.hash = '#/' + pageId;
+  // },
 
   init: function () {
     this.initApp();
+    this.backStartPage();
     //this.initPages();
     this.initArticles();
     this.initCategories();
