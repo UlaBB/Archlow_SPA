@@ -2,6 +2,7 @@ export const select = {
   buttonOf: {
     initApp: '#btn__start',
     backStartPage: '#pages__icon__back',
+    navPanel: '#loginPanel__sandwich',
   },
   pages: {
     mainPage: '#archlow',
@@ -14,7 +15,9 @@ export const select = {
   containerOf: {
     articles: '.post-articles',
     pages: '#pages',
+    navLinks: '.navPanel__list li a',
     sections: '.section__wrapper',
+    navPanel: '#navPanel',
   },
   wrapperOf: {
     article: '.post',

@@ -3,32 +3,23 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
 }
 
 body {
   margin: 0;
-  //background: lighten($color-dark, 75%);
-  font-size: 14px;
   line-height: 1.7;
   font-family: 'Raleway', sans-serif;
-  //color: $color-dark;
 }
 
 .container {
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0 20px;
   padding: 0 20px;
 }
-
 
 section{
   width: 100vw;
   margin: 0 auto;
-}
-
-.container{
-  margin: 0 20px;
 }
 
 @media (min-width: 576px) {

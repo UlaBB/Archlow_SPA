@@ -159,6 +159,48 @@ const app = {
     });
   },
 
+  iniNavPanel: function () {
+    const navPanelBtn = document.querySelector(select.buttonOf.navPanel);
+    navPanelBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const navPanel = document.querySelector(select.containerOf.navPanel);
+      navPanel.classList.toggle('open');
+    });
+  },
+
+  closeNavPanel: function () {
+    const navPanelContainer = document.querySelector(select.containerOf.navPanel);
+    navPanelContainer.addEventListener('click', (e) => {
+      e.preventDefault();
+      navPanelContainer.classList.remove('open');
+    });
+  },
+
+  initPages: function () {
+    this.pages = Array.from(document.querySelector(select.containerOf.pages).children);
+    console.log(this.pages);
+    this.navLinks = Array.from(document.querySelectorAll(select.containerOf.navLinks));
+    console.log(this.navLinks);
+
+    for (let navLink of this.navLinks) {
+      navLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        const idPage = navLink.getAttribute('href').replace('#', '');
+        console.log('idPage:', idPage);
+        // to remake as a solitary function / 
+        const mainPage = document.querySelector(select.pages.mainPage);
+        mainPage.classList.remove(classNames.pages.active);
+        app.activePage(idPage);
+      });
+    }
+  },
+
+  activePage: function (pageId) {
+    for (let page of this.pages) {
+      page.classList.toggle(classNames.pages.active, page.id == pageId);
+      console.log(page.id);
+    }
+  },
   // initPages: function () {
 
   //   this.pages = Array.from(document.querySelector(select.containerOf.pages).children);
@@ -205,7 +247,9 @@ const app = {
   init: function () {
     this.initApp();
     this.backStartPage();
-    //this.initPages();
+    this.iniNavPanel();
+    this.closeNavPanel();
+    this.initPages();
     this.initArticles();
     this.initCategories();
     this.initSections();

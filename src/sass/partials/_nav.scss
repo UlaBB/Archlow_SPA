@@ -1,25 +1,36 @@
 
 .navPanel{
-  width: 100%;
-  height: 160px;
-  background-color: $base__background-color;
-  color: $color-apricot;
+  position: absolute;
+  width: 100vw;
+  height: 170px;
+  background-color: rgba(255, 255, 255, 0.5);
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  display: none;
+  align-content: center;
+  transform: translate(0, -170px);
+  transition: transform 0.5s ease-in;
+}
+
+.open{
+  transform: translate(0, 0);
 }
 
 .navPanel__list{
   list-style: none;
   text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   li{
-    margin-bottom: 10px;
+  margin: 5px 0;
     a{
-      color: $color-apricot;
+      color: $base__background-color;
       font-weight: bold;
     }
+
     a:hover{
       color: $color-apricot-dark;
     }
