@@ -59,7 +59,7 @@
         <div class="container">
           <div class="pages__header__list">
             <div class="pages__header__arrow">
-              <i id="pages__icon__back" class="fa fa-angle-left pages__icon"></i>
+              <i class="fa fa-angle-left pages__icon pages__icon__back"></i>
             </div>
             <div class="loginPanel__logo">
               <div class="loginPanel__logo__symbol"></div>
@@ -86,50 +86,80 @@
 
     <!--technical about me-->
     <section id="aboutUs">
-      <div class="main-page container">
-        oMnie</div>
+      <div class="pages__header">
+        <div class="container">
+          <div class="pages__header__list">
+            <div class="pages__header__arrow">
+              <i class="fa fa-angle-left pages__icon pages__icon__back"></i>
+            </div>
+            <div class="loginPanel__logo">
+              <div class="loginPanel__logo__symbol"></div>
+            </div>
+          </div>
+          <div class="pages__header__text">
+            <h2>O nas</h2>
+            <p>Kim jesteśmy?</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- blog-->
     <section id="blog">
-      <section class="category">
+
+      <div class="pages__header">
         <div class="container">
-          <div class="category__container flex">
-            <div class="category__select">
-              <label class="category__label" for="select">Kategoria :</label>
-              <select id="select" class="category__item">
-                <!-- <option value="">Name of category</option> -->
-              </select>
+          <div class="pages__header__list">
+            <div class="pages__header__arrow">
+              <i class="fa fa-angle-left pages__icon pages__icon__back"></i>
             </div>
-            <div class="category__searchform">
-              <form id="category__form">
-                <div class="flex">
-                  <div class="category__input">
-                    <input id="s" class="category__field" type="text" onfocus="this.value=''" name="s"
-                      placeholder="Wpisz słowo kluczowe">
+            <div class="loginPanel__logo">
+              <div class="loginPanel__logo__symbol"></div>
+            </div>
+          </div>
+          <div class="pages__header__text">
+            <div class="blog__container">
+              <h2>Blog</h2>
+
+              <div class="category__searchform">
+                <form id="category__form">
+                  <div class="flex">
+                    <div class="category__input">
+                      <input id="s" class="category__field" type="text" onfocus="this.value=''" name="s"
+                        placeholder="Wpisz słowo kluczowe">
+                    </div>
+                    <button class="category__searchbutton" type="submit" aria-label="Add item">
+                      <svg class="svg-inline--fa fa-search fa-w-16" aria-hidden="true" data-fa-processed=""
+                        data-prefix="fas" data-icon="search" role="img" viewBox="0 0 512 512" focusable="false">
+                        <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 
+                                                208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 
+                                                6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 
+                                                9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 
+                                                70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
+                        </path>
+                      </svg>
+                    </button>
                   </div>
-                  <button class="category__searchbutton" type="submit" aria-label="Add item">
-                    <svg class="svg-inline--fa fa-search fa-w-16" aria-hidden="true" data-fa-processed=""
-                      data-prefix="fas" data-icon="search" role="img" viewBox="0 0 512 512" focusable="false">
-                      <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 
-                                            208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 
-                                            6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 
-                                            9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 
-                                            70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
-                      </path>
-                    </svg>
-                  </button>
-                </div>
-              </form>
+                </form>
+              </div>
+            </div>
+
+            <div class="category">
+              <div class="category__select">
+                <label class="category__label" for="select">Kategoria :</label>
+                <select id="select" class="category__item">
+                  <!-- <option value="">Name of category</option> -->
+                </select>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section class="posts">
+      <div class="posts">
         <div class="container flex-wrap post-articles"></div>
         <div id="" class="main-page container">
-          <section class="tagsCloud">
+          <div class="tagsCloud">
             <div class="container">
               <div class="tagsCloud__tags flex-wrap">
                 <h2>Tag cloud</h2>
@@ -140,7 +170,7 @@
                 </ul>
               </div>
             </div>
-          </section>
+          </div>
 
           <footer class="contact">
             <div class="contact__content-info">
@@ -161,18 +191,31 @@
             </div>
           </footer>
         </div>
-      </section>
+      </div>
     </section>
 
     <!--contact-->
     <section id="Kontakt">
-      <div id="" class="main-page container">
-        Kontakt</div>
+      <div class="pages__header">
+        <div class="container">
+          <div class="pages__header__list">
+            <div class="pages__header__arrow">
+              <i class="fa fa-angle-left pages__icon pages__icon__back"></i>
+            </div>
+            <div class="loginPanel__logo">
+              <div class="loginPanel__logo__symbol"></div>
+            </div>
+          </div>
+          <div class="pages__header__text">
+            <h2>Kontakt</h2>
+          </div>
+        </div>
+      </div>
     </section>
 
   </div>
 
-  <header id="header" class="header">
+  <!-- <header id="header" class="header">
     <div class="container">
       <nav class="nav flex">
         <div class="nav__logo nav__brand">
@@ -203,7 +246,7 @@
         </div>
       </nav>
     </div>
-  </header>
+  </header> -->
 
   <script id="template-section-link" type="text/x-handlebars-template">
     <div class="section__container">

@@ -129,122 +129,96 @@ const app = {
     }
   },
 
-  // init start button
-  initApp: function () {
-    const initBtn = document.querySelector(select.buttonOf.initApp);
+  getElements: function () {
+    this.startBtn = document.querySelector(select.buttonOf.startApp);
+    this.backBtns = document.querySelectorAll(select.buttonOf.backStartPage);
+    this.navPanelBtn = document.querySelector(select.buttonOf.navPanel);
 
-    initBtn.addEventListener('click', function (e) {
+    this.pagesContainer = document.querySelector(select.containerOf.pages);
+    this.startPage = document.querySelector(select.pages.startPage);
+    this.mainPage = document.querySelector(select.pages.mainPage);
+    this.navLinksContainer = document.querySelectorAll(select.containerOf.navLinks);
+
+    this.navPanel = document.querySelector(select.containerOf.navPanel);
+  },
+
+  initApp: function () {
+    this.startBtn.addEventListener('click', e => {
       e.preventDefault();
       app.startApp();
     });
   },
 
   startApp: function () {
-    const mainPage = document.querySelector(select.pages.mainPage);
-    const conditionPage = document.querySelector(select.pages.conditionsPage);
-
-    mainPage.classList.remove(classNames.pages.active);
-    conditionPage.classList.add(classNames.pages.active);
+    this.startPage.classList.remove(classNames.pages.active);
+    this.mainPage.classList.add(classNames.pages.active);
   },
 
   backStartPage: function () {
-    const backStartPageBtn = document.querySelector(select.buttonOf.backStartPage);
-
-    backStartPageBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      const mainPage = document.querySelector(select.pages.mainPage);
-      const conditionPage = document.querySelector(select.pages.conditionsPage);
-      mainPage.classList.add(classNames.pages.active);
-      conditionPage.classList.remove(classNames.pages.active);
-    });
+    for (let backBtn of this.backBtns) {
+      backBtn.addEventListener('click', e => {
+        e.preventDefault();
+        this.startPage.classList.add(classNames.pages.active);
+        this.mainPage.classList.remove(classNames.pages.active);
+      });
+    }
   },
 
   iniNavPanel: function () {
-    const navPanelBtn = document.querySelector(select.buttonOf.navPanel);
-    navPanelBtn.addEventListener('click', (e) => {
+    this.navPanelBtn.addEventListener('click', e => {
       e.preventDefault();
-      const navPanel = document.querySelector(select.containerOf.navPanel);
-      navPanel.classList.toggle('open');
+      this.navPanel.classList.toggle('open');
     });
   },
 
   closeNavPanel: function () {
-    const navPanelContainer = document.querySelector(select.containerOf.navPanel);
-    navPanelContainer.addEventListener('click', (e) => {
+    this.navPanel.addEventListener('click', e => {
       e.preventDefault();
-      navPanelContainer.classList.remove('open');
+      this.navPanel.classList.remove('open');
     });
   },
 
   initPages: function () {
-    this.pages = Array.from(document.querySelector(select.containerOf.pages).children);
-    console.log(this.pages);
-    this.navLinks = Array.from(document.querySelectorAll(select.containerOf.navLinks));
-    console.log(this.navLinks);
+    this.pages = Array.from(this.pagesContainer.children);
+    this.navLinks = Array.from(this.navLinksContainer);
 
     for (let navLink of this.navLinks) {
-      navLink.addEventListener('click', (e) => {
+      navLink.addEventListener('click', e => {
         e.preventDefault();
         const idPage = navLink.getAttribute('href').replace('#', '');
-        console.log('idPage:', idPage);
-        // to remake as a solitary function / 
-        const mainPage = document.querySelector(select.pages.mainPage);
-        mainPage.classList.remove(classNames.pages.active);
+        this.startPage.classList.remove(classNames.pages.active);
         app.activePage(idPage);
       });
     }
+
+    let pagesMatchingHash = [];
+
+    if (window.location.hash > 2) {
+      const idFromHash = window.location.hash.replace('#/', '');
+      pagesMatchingHash = this.pages.filter(function (page) {
+        return page.id == idFromHash;
+      });
+    }
+    console.log('pagesMatchingHash', pagesMatchingHash);
+    app.activePage(pagesMatchingHash.length ? pagesMatchingHash[0].id : this.pages[0].id);
+
+
   },
 
   activePage: function (pageId) {
     for (let page of this.pages) {
       page.classList.toggle(classNames.pages.active, page.id == pageId);
-      console.log(page.id);
     }
+    for (let navLink of this.navLinks) {
+      navLink.classList.toggle(classNames.pages.active, navLink.getAttribute('href') == '#' + pageId);
+    }
+
+    window.location.hash = '#/' + pageId;
+
   },
-  // initPages: function () {
-
-  //   this.pages = Array.from(document.querySelector(select.containerOf.pages).children);
-
-  //   this.navLinks = Array.from(document.querySelectorAll(select.nav.links));
-
-  //   let pagesMatchingHash = [];
-
-  //   if (window.location.hash.length > 2) {
-  //     const idFromHash = window.location.hash.replace('#/', '');//example: archlow
-
-  //     pagesMatchingHash = this.pages.filter(function (page) {
-  //       return page.id == idFromHash;
-  //     });
-  //   }
-
-  //   for (let link of this.navLinks) {
-  //     link.addEventListener('click', function (e) {
-  //       e.preventDefault();
-
-  //       const idPage = this.getAttribute('href').replace('#', '');
-  //       console.log(idPage);
-
-  //       app.activePage(idPage);
-  //     });
-  //   }
-
-  //   app.activePage(pagesMatchingHash.length ? pagesMatchingHash[0].id : this.pages[0].id);
-  // },
-
-  // activePage: function (pageId) {
-
-  //   for (let link of this.navLinks) {
-  //     link.classList.toggle(classNames.nav.active, link.getAttribute('href') == '#' + pageId);
-  //   }
-
-  //   for (let page of this.pages) {
-  //     page.classList.toggle(classNames.pages.active, page.id == pageId);
-  //   }
-
-  //   window.location.hash = '#/' + pageId;
-  // },
 
   init: function () {
+    this.getElements();
     this.initApp();
     this.backStartPage();
     this.iniNavPanel();

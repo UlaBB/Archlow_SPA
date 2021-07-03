@@ -1,12 +1,12 @@
 export const select = {
   buttonOf: {
-    initApp: '#btn__start',
-    backStartPage: '#pages__icon__back',
+    startApp: '#btn__start',
+    backStartPage: '.pages__icon__back',
     navPanel: '#loginPanel__sandwich',
   },
   pages: {
-    mainPage: '#archlow',
-    conditionsPage: '#warunkiTechniczne',
+    startPage: '#archlow',
+    mainPage: '#warunkiTechniczne',
   },
   templateOf: {
     articles: '#template-article-link',
