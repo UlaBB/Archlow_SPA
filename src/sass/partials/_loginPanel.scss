@@ -1,60 +1,60 @@
-
 .loginPanel__wrapper {
   display: flex;
   flex-direction: column;
   color: $base__background-color;
 }
 
-.loginPanel__mainPanel{
+.loginPanel__mainPanel {
   height: 80vh;
-  background: $color-apricot;
+  background: linear-gradient(120deg, #ff512f, #f09819);
   border-radius: 0 0 100px 0;
 }
 
-.loginPanel__startPanel{
+.loginPanel__startPanel {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 20px 0;
 }
 
-.loginPanel__sandwich{
+.loginPanel__sandwich {
   display: flex;
   flex-direction: column;
   cursor: pointer;
 }
 
-.loginPanel__sandwich__a{
+.loginPanel__sandwich__a {
   width: 26px;
   height: 2px;
   background-color: $base__background-color;
   margin: 2px 0;
 }
 
-.loginPanel__sandwich__b{
+.loginPanel__sandwich__b {
   width: 18px;
   height: 2px;
   background-color: $base__background-color;
   margin: 2px 0;
 }
 
-.loginPanel__logo{
+.loginPanel__logo {
   height: 20px;
   width: 20px;
   background-color: $base__background-color;
   border-radius: 20px;
 }
 
-.loginPanel__text{
+.loginPanel__text {
   width: 200px;
   transform: translateY(300px);
 
-  >h1, h3{
+  > h1,
+  h3 {
     margin: 10px 0;
     line-height: 1.4;
   }
 
-  >h1{
+  > h1 {
     font-weight: extra-bold;
     letter-spacing: 5px;
   }
@@ -63,7 +63,7 @@
     font-weight: 500;
     letter-spacing: 0.4px;
 
-    >span{
+    > span {
       margin-top: 20px;
       text-transform: uppercase;
       font-weight: 500;
@@ -94,10 +94,10 @@
   text-align: center;
   line-height: 0.5;
   letter-spacing: 2px;
-  transition: background-color 0.3s;
+  transition: all 0.5s ease;
 }
 
-.loginPanel__btn:hover{
+.loginPanel__btn:hover {
   background-color: $base__background-color;
   color: $color-apricot;
   border: 1px solid $color-apricot;

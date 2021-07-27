@@ -143,7 +143,7 @@ const app = {
   },
 
   initApp: function () {
-    this.startBtn.addEventListener('click', e => {
+    this.startBtn.addEventListener('click', function (e) {
       e.preventDefault();
       app.startApp();
     });
@@ -182,15 +182,6 @@ const app = {
     this.pages = Array.from(this.pagesContainer.children);
     this.navLinks = Array.from(this.navLinksContainer);
 
-    for (let navLink of this.navLinks) {
-      navLink.addEventListener('click', e => {
-        e.preventDefault();
-        const idPage = navLink.getAttribute('href').replace('#', '');
-        this.startPage.classList.remove(classNames.pages.active);
-        app.activePage(idPage);
-      });
-    }
-
     let pagesMatchingHash = [];
 
     if (window.location.hash > 2) {
@@ -199,10 +190,19 @@ const app = {
         return page.id == idFromHash;
       });
     }
-    console.log('pagesMatchingHash', pagesMatchingHash);
-    app.activePage(pagesMatchingHash.length ? pagesMatchingHash[0].id : this.pages[0].id);
+    console.log(pagesMatchingHash);
+    for (let navLink of this.navLinks) {
+      navLink.addEventListener('click', e => {
+        e.preventDefault();
+        const pageId = navLink.getAttribute('href').replace('#', '');
+        this.startPage.classList.remove(classNames.pages.active);
+        app.activePage(pageId);
+      });
+      console.log('pagesMatchingHash', pagesMatchingHash);
+    }
 
-
+    const startPageLink = '';
+    app.activePage(pagesMatchingHash.length ? pagesMatchingHash[0].id : startPageLink);
   },
 
   activePage: function (pageId) {

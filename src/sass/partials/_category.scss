@@ -5,12 +5,11 @@
   align-items: center;
 }
 
-
 .category{
   margin: 15px 0;
   color: $base__background-color;
-  border-top:1px solid $base__background-color;
-  border-bottom:1px solid $base__background-color;
+  border-top: 1px solid $base__background-color;
+  border-bottom: 1px solid $base__background-color;
 
   &__select{
     display: flex;
