@@ -5,7 +5,7 @@
 }
 
 .loginPanel__mainPanel {
-  height: 80vh;
+  height: 75vh;
   background: linear-gradient(120deg, #ff512f, #f09819);
   border-radius: 0 0 100px 0;
 }
@@ -46,7 +46,7 @@
 
 .loginPanel__text {
   width: 200px;
-  transform: translateY(300px);
+  transform: translateY(250px);
 
   > h1,
   h3 {

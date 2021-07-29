@@ -45,7 +45,7 @@ export class Section {
     const sectionId = this.id;
 
     if(sectionId % 2 === 0){
-      this.element.style.background = '#AAAAAA';
+      this.element.style.background = '#ff9500';
     }
     else{
       this.element.style.background = '#F7A440';
