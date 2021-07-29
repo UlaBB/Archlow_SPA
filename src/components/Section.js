@@ -10,7 +10,7 @@ export class Section {
     this.renderSection();
     this.getElements();
     this.initAccordion();
-
+    this.sectionColor();
   }
 
   renderSection() { // render handlbars
@@ -39,5 +39,16 @@ export class Section {
         }
       });
     });
+  }
+
+  sectionColor(){
+    const sectionId = this.id;
+
+    if(sectionId % 2 === 0){
+      this.element.style.background = '#AAAAAA';
+    }
+    else{
+      this.element.style.background = '#F7A440';
+    }
   }
 }

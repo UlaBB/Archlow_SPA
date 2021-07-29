@@ -41,6 +41,7 @@ const app = {
 
 
   },
+ 
   generateTagsInArticle: function () {
     const articles = document.querySelectorAll(select.wrapperOf.article);
 
@@ -231,6 +232,7 @@ const app = {
     this.initTagsCloud();
     this.filterCategories();
     this.filterArticleByTag();
+
   }
 };
 

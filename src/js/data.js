@@ -103,7 +103,7 @@ dataSource.articles = {
 
 dataSource.sections = {
   dział_1: {
-    id: 'Dział-1',
+    id: 1,
     sectionTitle: 'Dział I',
     sectionSubTitle: 'Przepisy ogólne',
     sectionContent: {
@@ -141,7 +141,7 @@ dataSource.sections = {
     }
   },
   dział_2: {
-    id: 'Dział-2',
+    id: 2,
     sectionTitle: 'Dział II',
     sectionSubTitle: 'Zabudowa i zagospodarowanie działki budowlanej',
     sectionContent: {
@@ -179,24 +179,24 @@ dataSource.sections = {
     }
   },
   dział_3: {
-    id: 'Dział-3',
+    id: 3,
     sectionTitle: 'Dział III',
     sectionSubTitle: 'Budynki i pomieszczenia',
   },
   dział_4: {
-    id: 'Dział-4',
+    id: 4,
     sectionTitle: 'Dział IV',
     sectionSubTitle: 'Wyposażenie techniczne budynków',
     sectionIcon: 'fab fa-simplybuilt',
   },
   dział_5: {
-    id: 'Dział-1',
+    id: 5,
     sectionTitle: 'Dział 1',
     sectionSubTitle: 'Przepisy ogólne',
     sectionIcon: 'fab fa-simplybuilt',
   },
   dział_6: {
-    id: 'Dział-1',
+    id: 6,
     sectionTitle: 'Dział 1',
     sectionSubTitle: 'Przepisy ogólne',
     sectionIcon: 'fab fa-simplybuilt',

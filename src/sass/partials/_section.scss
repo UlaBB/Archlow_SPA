@@ -1,4 +1,4 @@
-.section__wrapper{
+.section__wrapper {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -15,15 +15,16 @@
   transition: 50ms;
   position: relative;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, .1) 0 1px 2px 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px 0;
   cursor: pointer;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-content: center;
+  transition: all 0.5s ease;
 }
 
-.section__container:hover{
+.section__container:hover {
   cursor: pointer;
   background: $color-border;
 
@@ -49,14 +50,13 @@
   transition: all 0.5s;
 }
 
-
-.section__con__content{
+.section__con__content {
   background-color: $base__background-color;
   display: none;
-  animation: flipdown 0.8s ease both;
+  animation: flipdown 2s ease both;
 }
 
-@keyframes flipdown{
+@keyframes flipdown {
   0% {
     opacity: 0;
     transform-origin: top center;
@@ -85,24 +85,24 @@
   }
 }
 
-.section__container.active .section__icon{
+.section__container.active .section__icon {
   transform: rotate(180deg);
 }
 
-.section__container.active .section__con__content{
+.section__container.active .section__con__content {
   display: block;
 }
 
-.section_con__list{
+.section_con__list {
   list-style: none;
   margin-top: 15px;
 }
 
-.section_con__listElement{
+.section_con__listElement {
   margin: 10px;
 }
 
-.section_con_listElement_title{
+.section_con_listElement_title {
   color: $color-apricot;
   letter-spacing: 0.5px;
 }
