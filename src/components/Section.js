@@ -2,41 +2,42 @@ import { classNames, select, templates } from '../js/settings.js';
 import { utils } from '../js/utils.js';
 
 export class Section {
-    constructor(id, data) {
-        this.id = id;
-        this.data = data;
-        this.renderSection();
-        this.initAccordion();
+  constructor(id, data) {
 
-    }
-    renderSection() {
-        const generatedHTML = templates.sections(this.data);
-        this.element = utils.createDOMFromHTML(generatedHTML);
-        const sectionContainer = document.querySelector(select.containerOf.sections);
-        sectionContainer.appendChild(this.element);
-    }
+    this.id = id;
+    this.data = data;
 
-    initAccordion() {
-        const thisSection = this;
-        console.log('this.element:', this.element);//section_container
-        const clickableElement = this.element.querySelector('.section__con_text');
-        const technicalOption = thisSection.element;
+    this.renderSection();
+    this.getElements();
+    this.initAccordion();
 
-        clickableElement.addEventListener('click', function (e) {
-            e.preventDefault();
-            thisSection.element.classList.toggle(classNames.technicalCondWrapper.active);
+  }
 
-            const activeSections = document.querySelectorAll(select.all.activeSections);
+  renderSection() { // render handlbars
+    const generatedHTML = templates.sections(this.data);
+    this.element = utils.createDOMFromHTML(generatedHTML);
+    const sectionContainer = document.querySelector(select.containerOf.sections);
+    sectionContainer.appendChild(this.element);
+  }
 
-            console.log('active:', activeSections);
+  getElements(){
+    this.sectionHead = this.element.querySelector('.section__con_text');
+  }
 
+  initAccordion() {
+    const thisSection = this;
 
+    this.sectionHead.addEventListener('click', e => {
+      e.preventDefault();
+      this.element.classList.toggle(classNames.technicalCondWrapper.active);
 
-            for (let activeSection of activeSections) {
-                if (activeSection != thisSection.element) {
-                    activeSection.classList.remove(classNames.technicalCondWrapper.active);
-                }
-            }
-        });
-    }
+      const sectionsActive = document.querySelectorAll(select.all.activeSections);
+
+      sectionsActive.forEach(section => {
+        if(section != thisSection.element){
+          section.classList.remove(classNames.technicalCondWrapper.active);
+        }
+      });
+    });
+  }
 }

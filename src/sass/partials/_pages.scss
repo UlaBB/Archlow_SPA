@@ -1,13 +1,13 @@
-.pages__header{
+.pages__header {
   height: 35vh;
   width: 100vw;
-  background-color: $color-apricot;
+  background: linear-gradient(120deg, #ff512f, #f09819);
   border-radius: 0 0 100px 0;
   margin: 0;
   display: inline-block;
 }
 
-.pages__header__list{
+.pages__header__list {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,13 +21,13 @@
   cursor: pointer;
 }
 
-.pages__header__text{
+.pages__header__text {
   color: $base__background-color;
   font-weight: bold;
   letter-spacing: 2px;
   margin-top: 5px;
 
-  p{
+  p {
     letter-spacing: normal;
     padding-bottom: 5px;
   }
